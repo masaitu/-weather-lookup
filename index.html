@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Lookup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <section class="weather-app" aria-live="polite">
+      <div class="heading">
+        <h1>Weather Lookup</h1>
+        <p class="subhead">Check the latest temperature and wind for popular cities.</p>
+      </div>
+
+      <div class="search-section">
+        <label for="cityInput" class="sr-only">City name</label>
+        <input type="text" id="cityInput" name="city" placeholder="Enter city name..." autocomplete="off">
+        <button id="searchBtn" type="button">Search</button>
+      </div>
+
+      <p class="hint">Try Nairobi, London, New York, Tokyo, Paris, or Sydney.</p>
+
+      <div id="loading" class="hidden" role="status" aria-live="assertive">Loading...</div>
+
+      <div id="weatherResult" class="hidden result-card">
+        <div class="result-header">
+          <div>
+            <p class="label">City</p>
+            <h2 id="cityName"></h2>
+          </div>
+          <img id="icon" alt="Weather icon" src="">
+        </div>
+        <div class="stats">
+          <p class="stat">Temperature: <span id="temp"></span> °C</p>
+          <p class="stat">Wind Speed: <span id="wind"></span> km/h</p>
+        </div>
+      </div>
+
+      <div id="errorMsg" class="error hidden" role="alert"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
